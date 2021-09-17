@@ -21,6 +21,23 @@ jobs:
       matrix:
         stack_version: ['8.0.0-SNAPSHOT']
 
+  test-build-distribution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install build tools
+        run: |
+          python3.7 -m pip install --upgrade build
+      - name: Build project for distribution
+        run: |
+          python3.7 -m build
+
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
