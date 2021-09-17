@@ -35,7 +35,7 @@ jobs:
           python3.7 -m pip install --upgrade build
       - name: Build project for distribution
         run: |
-          python3.7 -m build
+          python3.7 -m build #blah
 
 
     steps:
